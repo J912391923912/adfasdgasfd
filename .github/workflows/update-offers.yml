@@ -8,53 +8,37 @@ on:
 jobs:
   scrape-and-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
-    
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.10'
-    
-    - name: Install dependencies
-      run: |
-        pip install requests beautifulsoup4
-    
-    - name: Run scraper
-      run: |
-        python scrape_offers.py
-    
-    - name: Commit and push changes
-      run: |
-        git config --local user.email "github-actions[bot]@users.noreply.github.com"
-        git config --local user.name "github-actions[bot]"
-        git add offers_display.html offers_ai.html
-        git diff --quiet && git diff --staged --quiet || git commit -m "Auto-update offers $(date +'%Y-%m-%d %H:%M')"
-        git push
-    
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./
-        publish_branch: gh-pages
-```
-
-### **4. Scrolla ner och klicka "Commit changes"**
-
-### **5. Gå till "Actions"-fliken**
-Nu ska du se "Update Åland Offers" i listan! ✨
-
-### **6. Klicka på "Update Åland Offers"**
-
-### **7. Klicka "Run workflow" → "Run workflow"**
-
----
-
-## 💡 Varför detta hände:
-
-GitHub Actions letar BARA efter filer i:
-```
-.github/workflows/*.yml
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      
+      - name: Install dependencies
+        run: |
+          pip install requests beautifulsoup4
+      
+      - name: Run scraper
+        run: |
+          python scrape_offers.py
+      
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add offers_display.html offers_ai.html
+          git diff --quiet && git diff --staged --quiet || git commit -m "Auto-update offers $(date +'%Y-%m-%d %H:%M')"
+          git push
+      
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
+          publish_branch: gh-pages
