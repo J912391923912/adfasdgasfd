@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aktuella Rabatter & Erbjudanden - Chatbot.ax</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #fff;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+  }
+
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 5%;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 20px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 1em;
+    font-size: 0.9em;
+    font-weight: 600;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    margin-bottom: 0.5em;
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #f472b6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1em;
+  }
+
+  .update-time {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .category-section {
+    margin-bottom: 50px;
+  }
+
+  .category-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1.5em;
+    padding-bottom: 0.5em;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .offers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 25px;
+  }
+
+  .offer-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 25px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: #fff;
+    display: block;
+  }
+
+  .offer-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  .offer-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 15px;
+  }
+
+  .offer-icon {
+    font-size: 2.5em;
+    flex-shrink: 0;
+  }
+
+  .offer-info {
+    flex: 1;
+  }
+
+  .offer-store {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+  }
+
+  .offer-product {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 0.8em;
+  }
+
+  .offer-details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 1em;
+  }
+
+  .offer-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #10b981;
+  }
+
+  .offer-valid {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .offer-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #60a5fa;
+    font-size: 0.9em;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .footer {
+    text-align: center;
+    margin-top: 60px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  @media (max-width: 768px) {
+    .offers-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  
+  <div class="header">
+    <div class="badge">
+      💰 Uppdateras automatiskt
+    </div>
+    <h1>
+      Aktuella Rabatter & <span class="gradient-text">Erbjudanden</span>
+    </h1>
+    <p class="subtitle">
+      De bästa erbjudandena från lokala butiker på Åland
+    </p>
+    <p class="update-time">
+      Senast uppdaterad: 2025-10-19 16:39
+    </p>
+  </div>
+
+  <div class="category-section">
+    <h2 class="category-title">Matvaror</h2>
+    <div class="offers-grid">
+
+      <a href="https://www.kantarellen.ax/erbjudanden" target="_blank" class="offer-card">
+        <div class="offer-header">
+          <div class="offer-icon">🏪</div>
+          <div class="offer-info">
+            <h3 class="offer-store">K-Supermarket Kantarellen</h3>
+          </div>
+        </div>
+        <p class="offer-product">Plussakort - Spara upp till 5%</p>
+        <div class="offer-details">
+          <div class="offer-price">Gratis kort</div>
+          <div class="offer-valid">⏰ Löpande</div>
+        </div>
+        <span class="offer-link">
+          Se mer →
+        </span>
+      </a>
+
+      <a href="https://www.kantarellen.ax/erbjudanden" target="_blank" class="offer-card">
+        <div class="offer-header">
+          <div class="offer-icon">🏪</div>
+          <div class="offer-info">
+            <h3 class="offer-store">K-Supermarket Kantarellen</h3>
+          </div>
+        </div>
+        <p class="offer-product">Veckans erbjudanden</p>
+        <div class="offer-details">
+          <div class="offer-price">Se aktuella priser i butik</div>
+          <div class="offer-valid">⏰ Vecka 42</div>
+        </div>
+        <span class="offer-link">
+          Se mer →
+        </span>
+      </a>
+
+      <a href="https://varuboden.ax/kampanjer/" target="_blank" class="offer-card">
+        <div class="offer-header">
+          <div class="offer-icon">🛒</div>
+          <div class="offer-info">
+            <h3 class="offer-store">Varuboden (S-market)</h3>
+          </div>
+        </div>
+        <p class="offer-product">S-Förmånskort Bonus</p>
+        <div class="offer-details">
+          <div class="offer-price">Upp till 5% bonus på inköp</div>
+          <div class="offer-valid">⏰ Löpande</div>
+        </div>
+        <span class="offer-link">
+          Se mer →
+        </span>
+      </a>
+
+      <a href="https://varuboden.ax/kampanjer/" target="_blank" class="offer-card">
+        <div class="offer-header">
+          <div class="offer-icon">🛒</div>
+          <div class="offer-info">
+            <h3 class="offer-store">Varuboden (S-market)</h3>
+          </div>
+        </div>
+        <p class="offer-product">Ägarens Lönedag</p>
+        <div class="offer-details">
+          <div class="offer-price">Extra erbjudanden</div>
+          <div class="offer-valid">⏰ Den 10:e varje månad</div>
+        </div>
+        <span class="offer-link">
+          Se mer →
+        </span>
+      </a>
+
+      <a href="https://varuboden.ax/kampanjer/" target="_blank" class="offer-card">
+        <div class="offer-header">
+          <div class="offer-icon">🛒</div>
+          <div class="offer-info">
+            <h3 class="offer-store">Varuboden (S-market)</h3>
+          </div>
+        </div>
+        <p class="offer-product">Röda Lappar - Dubbelrabatt</p>
+        <div class="offer-details">
+          <div class="offer-price">Dubbel rabatt under sista öppethålningstiden</div>
+          <div class="offer-valid">⏰ Dagligen</div>
+        </div>
+        <span class="offer-link">
+          Se mer →
+        </span>
+      </a>
+
+    </div>
+  </div>
+
+  <div class="category-section">
+    <h2 class="category-title">Blandat</h2>
+    <div class="offers-grid">
+
+      <a href="https://www.eckerolinjen.ax/alandsrabatten" target="_blank" class="offer-card">
+        <div class="offer-header">
+          <div class="offer-icon">🎟️</div>
+          <div class="offer-info">
+            <h3 class="offer-store">ÅlandsRabatten</h3>
+          </div>
+        </div>
+        <p class="offer-product">~350 kuponger</p>
+        <div class="offer-details">
+          <div class="offer-price">Mat, kläder, restauranger m.m.</div>
+          <div class="offer-valid">⏰ Årskupongbok</div>
+        </div>
+        <span class="offer-link">
+          Se mer →
+        </span>
+      </a>
+
+      <a href="https://alandskortet.alandstidningen.ax/kupongfesten" target="_blank" class="offer-card">
+        <div class="offer-header">
+          <div class="offer-icon">🎉</div>
+          <div class="offer-info">
+            <h3 class="offer-store">Kupongfesten (Ålandskortet)</h3>
+          </div>
+        </div>
+        <p class="offer-product">Bio Savoy</p>
+        <div class="offer-details">
+          <div class="offer-price">2 för 1 biobiljetter</div>
+          <div class="offer-valid">⏰ Se aktuella kuponger</div>
+        </div>
+        <span class="offer-link">
+          Se mer →
+        </span>
+      </a>
+
+    </div>
+  </div>
+
+  <div class="category-section">
+    <h2 class="category-title">Köpcentrum</h2>
+    <div class="offers-grid">
+
+      <a href="https://www.maxinge.ax" target="_blank" class="offer-card">
+        <div class="offer-header">
+          <div class="offer-icon">🏬</div>
+          <div class="offer-info">
+            <h3 class="offer-store">Maxinge Center</h3>
+          </div>
+        </div>
+        <p class="offer-product">Se Maxingebladet</p>
+        <div class="offer-details">
+          <div class="offer-price">Specialerbjudanden från olika butiker</div>
+          <div class="offer-valid">⏰ Enligt Maxingebladet</div>
+        </div>
+        <span class="offer-link">
+          Se mer →
+        </span>
+      </a>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>
+      💡 <strong>Tips:</strong> Fråga vår AI-guide om specifika rabatter eller erbjudanden!
+    </p>
+    <p style="margin-top: 1em; font-size: 0.9em; color: rgba(255, 255, 255, 0.6);">
+      Chatbot.ax - Din guide till Åland
+    </p>
+  </div>
+
+</div>
+
+</body>
+</html>
